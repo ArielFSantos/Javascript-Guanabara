@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(69, 69, 233);
+            font: normal 15pt Arial;
+            text-align: center;
+        }
+        header{
+            color: white;
+            text-align: center;
+
+        }
+        section{
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.404);
+
+        }
+        footer{
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Média do aluno V1.0</h1>
+    </header>
+    <section>
+        <Button onclick="clicou()">Cálcular Média</Button>
+        <div id="conteudo"></div>
+    </section>
+    <footer>&copy; CursoemVideo</footer>
+    <script>    
+    let conteudo = document.getElementById('conteudo')
+        function clicou(){
+            let nome = prompt('Digite seu nome: ')
+            let primeiroNumero = parseFloat(prompt('Diite o primeiro numero : '))
+            let segundoNumero = parseFloat(prompt('Digite o segundo numero : '))
+            const resultado = (primeiroNumero + segundoNumero) /2 ;
+            conteudo.innerHTML=`
+            <p> Calcuando a média final de <mark>${nome}</mark>.</p>
+            <p> As Notas obtidas foram <mark>${primeiroNumero}</mark> e <mark>${segundoNumero}</mark>.</p>
+            <p> Média Final é <mark>${resultado}</mark>.</p>
+             `
+        }
+
+    </script>
+</body>
+</html>
