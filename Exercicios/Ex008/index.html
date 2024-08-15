@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+    <style>
+        body{
+            background-color: rgb(69, 69, 233);
+            font: normal 15pt Arial;
+            text-align: center;
+        }
+        header{
+            color: white;
+            text-align: center;
+
+        }
+        section{
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.404);
+
+        }
+        footer{
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vários cálculos em JS</h1>
+    </header>
+    <section>
+        <button onclick="clicou()">Clique Para Calcular</button>
+        <div id="conteudo">Resultado Aqui</div>
+    </section>
+    <footer>&copy; CursoemVideo</footer>
+    <script>
+        let conteudo = document.getElementById('conteudo')
+        function clicou(){
+            const numero =  parseFloat(prompt('Digite um número'));
+            const abs = Math.abs(numero);
+            const parteInteira = Math.floor(numero);
+            const valorInteiroMaisProximo = Math.round(numero);
+            const raizQuadrada = Math.sqrt(numero);
+            const raizCubica = Math.cbrt(numero);
+            const elevadoAoQuadrado = Math.pow(numero,2);
+            const elevadoAoCubo = Math.pow(numero,3);
+            conteudo.innerHTML = ` 
+            <p>O Número a ser analisado aqui será o ${numero}</p>
+            <hr>
+            <p>O Seu valor absoluto é ${abs}</p>
+            <p>A sua parte inteira é ${parteInteira}</p>
+            <p>O valor inteiro mais proximo é ${valorInteiroMaisProximo}</p>
+            <p>A sua raiz quadrada é ${raizQuadrada}</p>
+            <p>A sua raiz cúbica é ${raizCubica}</p>
+            <p>O valor de ${numero}² é ${elevadoAoQuadrado}</p>
+            <p>O valor de ${numero}³ é ${elevadoAoCubo}</p>
+            `
+        }
+
+    </script>
+</body>
+</html>
