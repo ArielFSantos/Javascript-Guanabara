@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(69, 69, 233);
+            font: normal 15pt Arial;
+            text-align: center;
+        }
+        header{
+            color: white;
+            text-align: center;
+
+        }
+        section{
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.404);
+
+        }
+        footer{
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Média do aluno v2.0</h1>
+    </header>
+    <section>
+        <button onclick="clicou()">Calcular média</button>
+        <p id="conteudo">O resultado vai aparecer aqui</p>
+    </section>
+    <footer>&copy; CursoemVideo</footer>
+    <script>
+        let conteudo = document.getElementById('conteudo');
+        function clicou(){
+            const name = prompt('Qual o nome do aluno?');
+            const pNota = parseFloat(prompt(`Qual a Primeira nota de ${name}?`));
+            const sNota = parseFloat(prompt(`Qual a Segunda nota de ${name}?`));
+            const media = (pNota+sNota)/2;
+            let msg = "";
+            if (media>=6){
+                msg = 'Parabens' 
+            }
+            else{
+                msg = 'Deu Ruim'
+            }
+            conteudo.innerHTML=`
+            <p>Calculando a média final de <mark>${name}</mark></p>
+            <p>As notas obtidas foram <mark>${pNota} e ${sNota}</mark></p>
+            <p>A média final será <mark>${media}</mark></p>
+            <p>A menssagem que temos é : ${msg}</p>
+            
+            `;
+        }
+
+    </script>
+</body>
+</html>
